@@ -1,0 +1,50 @@
+.alert {
+    border-radius: var(--misc-border-radius);
+    border: solid 1px rgb(0, 255, 60);
+    background: rgba(17, 255, 0, 0.1);
+
+    font-family: var(--typo-ff-primary);
+    font-weight: var(--typo-fw-regular);
+
+    margin-bottom: var(--misc-padding-big);
+    padding: var(--misc-padding-small) var(--misc-padding-regular);
+    
+    &.info {
+        border: solid 1px rgb(0, 187, 255);
+        background: rgba(0, 8, 255, 0.1);
+    }
+    &.quiet {
+        border: solid 1px rgba(255, 255, 255, 0.014);
+        background: rgba(224, 224, 224, 0.01);
+        text-align: center;
+        opacity: 0.25;
+    }
+    &.sucess, &.sucess {
+        border: solid 1px var(--color-primary);
+        background: rgba(17, 255, 0, 0.1);
+    }
+    &.tipp {
+        border: solid 1px var(--color-primary);
+        background-color: var(--color-bright);
+        border-top-left-radius: 0;
+        &:after {
+            border: solid 1px var(--color-primary);
+            height: 20px;
+            content: "TIPP";
+            padding: 0.25rem 1rem;
+            position: absolute;
+            left: -1px;
+            top: calc(-22px - 0.5rem);
+            border-top-left-radius: var(--misc-border-radius);
+            border-top-right-radius: var(--misc-border-radius);
+            background-color: var(--color-primary);
+            font-weight: 600;
+            color: var(--color-background);
+            letter-spacing: 0.5px;
+        }
+    }
+    &.error {
+        border: solid 1px rgb(255, 0, 0);
+        background: rgba(255, 0, 0, 0.1);
+    }
+}

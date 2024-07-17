@@ -1,0 +1,246 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  scroll-behavior: smooth;
+  
+
+  main, #swup {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      //gap: var(--page-section-gap);
+      min-height: 66vh;
+      
+      position: relative;
+      background: url("/media/pattern.png");
+      background-size: 500px;
+      backdrop-filter: opacity(0.5);
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        
+        background-color: #f0f2f3f3;
+        z-index: 0;
+      }
+      > * {
+        z-index: 1;
+      }
+  }
+  > .with-sidebar, #swup > .with-sidebar {
+    flex-wrap: nowrap !important;
+    > main {
+      flex: 1;
+    }
+  }
+}
+
+.inner-content {
+  padding: var(--misc-padding-large);
+  width: calc(100% - var(--misc-padding-large) * 2);
+}
+
+
+figure.image {
+  img {
+    width: 100%;
+  }
+}
+
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  &.dark {
+    &:after {
+      content: "";
+      background-color: rgba(0,0,0,0.33);
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 0;
+  }
+  }
+  &.front {
+    z-index: 2;
+  }
+  > img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+horizontal-group {
+  display: flex;
+  position: relative;
+  > .container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+vertical-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  width: 100%;
+}
+
+@include s {
+  horizontal-group:not(.locked) {
+    flex-direction: column;
+    > .container {
+      width: 100%;
+      flex: 1;
+    }
+  }
+  vertical-group {
+    width: 100%;
+    flex: 1;
+  }
+}
+
+
+section {
+  position: relative;
+  display: flex;
+  z-index: 0;
+  flex-wrap: wrap;
+  flex-direction: column;
+  max-width: var(--page-content-width);
+  &.bg-dark {
+    background-color: var(--color-dark);
+    --color-text: var(--color-bright);
+    * {
+      --color-darkest: var(--color-bright);
+    }
+  }
+  
+  &.td-space {
+    padding: 6rem 0;
+  }
+
+  >.inner {
+    max-width: var(--page-content-width-s);
+    margin: auto;
+  }
+  &.full-height {
+    margin: 0;
+  }
+  &.width-s {
+    max-width: var(--page-content-width-s);
+    width: 100%;
+  }
+  &.width-m {
+    max-width: var(--page-content-width-m);
+    width: 100%;
+  }
+  &.width-l {
+    max-width: var(--page-content-width-l);
+    width: 100%;
+  }
+
+  &.full-width {
+    max-width: unset;
+    min-width: unset;
+    width: 100%;
+    flex: 1;
+  }
+
+  &.full-height {
+    height: 100vh;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  position: relative;
+  &.horizontal {
+    flex-direction: row;
+  }
+}
+
+.box {
+  //width: calc(100% - 2rem);
+  position: relative;
+  display: flex;
+  gap: 2rem;
+  border: solid 1px var(--color-quiet);
+  border-radius: var(--misc-border-radius);
+  box-shadow: var(--misc-box-shadow);
+  transition: all 0.25s ease-in-out;
+  &.transparent {
+    background-color: rgba(255,255,255,0.3);
+    backdrop-filter: blur(20px);
+  }
+
+  .image {
+    height: 100%;
+    position: relative;
+    figure {
+      max-height: 145px;
+      width: 100%;
+    }
+    img {
+      border-radius: var(--misc-border-radius);
+      aspect-ratio: 1;
+      object-fit: cover;
+      //box-shadow: var(--misc-box-shadow);
+      width: 100%;
+      height: 100%;
+      border-bottom-right-radius: 0px;
+      border-top-right-radius: 0px;
+
+    }
+    &.small {
+      figure {
+        max-height: 75px;
+        img {
+          height: 100%;
+        }
+      }
+    }
+  }
+  
+  @include s {
+    .image img {
+      border-radius: var(--misc-border-radius);
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+    }
+  }
+  &.small {
+    padding: 0.25rem;
+    width: calc(50% - 0.75rem);
+  }
+  &.mw-50 {
+    width: calc(50% - 1rem);
+  }
+  .overlay {
+      z-index: 3;
+  }
+  .vertical {
+      flex-direction: column;
+  }
+  .info {
+      gap: 0.25rem;
+  }
+  .sub {
+      opacity: 0.5;
+  }
+}

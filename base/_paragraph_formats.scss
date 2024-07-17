@@ -1,0 +1,105 @@
+/*
+ * Author: Patrick Piper
+ * Website: coretecs.net
+ * Version: 1.0
+ */
+
+// Font Sizes
+.small {
+    font-size: var(--typo-fs-tiny);
+}
+.quiet {
+    opacity: 0.5;
+}
+.plakativ {
+    font-size: var(--typo-fs-large);
+    font-weight: var(--typo-fw-medium);
+    font-family: var(--typo-ff-secondary);
+}
+.plakativ-m {
+    font-size: var(--typo-fs-big);
+    font-weight: var(--typo-fw-medium);
+}
+.plakativ2-m {
+    font-size: var(--typo-fs-medium);
+    font-weight: var(--typo-fw-medium);
+    font-family: var(--typo-ff-primary);
+}
+.plakativ2 {
+    font-size: var(--typo-fs-large);
+    font-weight: var(--typo-fw-medium);
+    font-family: var(--typo-ff-primary);
+}
+
+.special {
+    color: var(--color-bright);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: var(--typo-fw-medium);
+    text-shadow: var(--misc-box-shadow);
+
+    &.block {
+        padding: 0.25rem 1rem;
+        border-radius: var(--misc-border-radius);
+        background-color: var(--color-darkest);
+        font-size: 1rem;
+    }
+}
+
+// Block Text Styles
+.block-text {
+    padding: 0.8rem 1.5rem;
+    background-color: #00b58b52;
+    border: solid 1px #00b58a;
+    border-radius: var(--misc-border-radius);
+    box-shadow: var(--misc-box-shadow);
+    color: var(--color-bright);
+    text-transform: uppercase;
+    font-weight: var(--typo-fw-bold);
+    letter-spacing: 1px;
+    backdrop-filter: blur(10px);
+    font-variant-numeric: lining-nums;
+
+    &.secondary {
+        background: unset;
+        backdrop-filter: unset;
+        padding: 0;
+        color: var(--color-bright);
+        border: unset;
+    }
+    &.big {
+        font-size: var(--typo-fs-big);
+        letter-spacing: 2px;
+    }
+}
+
+// Title Container
+.title-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h2 {
+        color: var(--color-text);
+        width: fit-content;
+        padding-right: var(--misc-padding-regular);
+    }
+}
+
+// Decoration Headline
+.decoration-headline {
+    font-weight: var(--typo-fw-medium);
+    font-size: var(--typo-fs-big);
+    text-transform: uppercase;
+}
+
+span.badge {
+    padding: 0.25rem 0.5rem;
+    font-size: var(--typo-fs-small);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    background-color: var(--color-dark);
+    color: var(--color-bright);
+    border-radius: 25px;
+  }
